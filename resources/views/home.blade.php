@@ -18,6 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
+
     <script src="geojson/tes.geojson"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
@@ -25,6 +26,7 @@
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 
     <style>
         #map {
@@ -107,20 +109,49 @@
                     "<br><strong>REMARK:</strong> " + remark +
                     "<br><strong>Latitude:</strong> " + latitude +
                     "<br><strong>Longitude:</strong> " + longitude +
-                    "<br><button onclick='keSini(" + latitude + ", " + longitude + ")'>Button</button>";
+                    "<br><button class='btn btn-info' onclick='return keAwal("+ latitude + ", " + longitude +")'>Start</button>" +
+                    " ||| <button class='btn btn-info' onclick='return keAkhir("+ latitude + ", " + longitude +")'>Dest</button>" +
+                    " ||| <button class='btn btn-info' onclick='return stopRouting("+ latitude + ", " + longitude +")'>Remove Route</button>" ;
+
 
                 layer.bindPopup(popupContent);
             }
         }).addTo(map);
     });
 
-    // L.Routing.control({
-    //     waypoints: [
-    //         L.latLng(-7.599187514,112.78720839799996),
-    //         L.latLng(-7.38659453000002, 112.733095929)
-    //     ]
-    // }).addTo(map);
+    var control = null;
 
+    function Routing() {
+        control = L.Routing.control({
+            waypoints: [
+                L.latLng(),
+                L.latLng()
+            ]
+        })
+        control.addTo(map);
+    }
+
+
+    function keAwal(latitude, longitude) {
+        var latLng0 = L.latLng(latitude, longitude);
+        if (control == null) {
+            Routing();
+            control.spliceWaypoints(0, 1, latLng0);
+            control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng1);
+        }
+        control.spliceWaypoints(0, 1, latLng0);
+
+    }
+
+    function keAkhir(latitude, longitude) {
+        var latLng1 = L.latLng(latitude, longitude);
+        control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng1);
+    }
+
+    function stopRouting() {
+        control.remove();
+        control = null;
+    }
 
 </script>
 
