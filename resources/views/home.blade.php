@@ -28,9 +28,8 @@
 
     <style>
         #map {
-            height: 800px;
+            height: 100vh;
         }
-
     </style>
 </head>
 
@@ -39,11 +38,27 @@
 </body>
 
 <script>
-    var map = L.map('map').setView([-8.030260467966045, 113.54722678635767], 9,5);
+    var map = L.map('map').setView([-7.299439741367735, 112.73090461654459], 10);
 
-    L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+    var Default = L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}&s=Ga', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    L.control.layers({
+        'Satellite': Satellite,
+        'Roads': Roads,
+        'Hybrid': Hybrid,
+        'Default': Default
+    }, null, {
+        position: 'bottomleft',
+        collapsed: false
     }).addTo(map);
+
+    Default.addTo(map);
+
+    // L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+    //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    // }).addTo(map);
 
     var busIcon = L.icon({
         iconUrl: 'images/pin.png',
@@ -91,12 +106,12 @@
         }).addTo(map);
     });
 
-    // L.Routing.control({
-    //     waypoints: [
-    //         L.latLng(-7.410733686000023,112.583008211),
-    //         L.latLng(-8.234534608999976, 114.35543114999996)
-    //     ]
-    // }).addTo(map);
+    L.Routing.control({
+        waypoints: [
+            L.latLng(-7.599187514,112.78720839799996),
+            L.latLng(-7.38659453000002, 112.733095929)
+        ]
+    }).addTo(map);
 
 
 </script>
