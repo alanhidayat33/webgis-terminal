@@ -39,7 +39,7 @@
 </body>
 
 <script>
-    var map = L.map('map').setView([-7.299439741367735, 112.73090461654459], 10);
+    var map = L.map('map').setView([-8.030260467966045, 113.54722678635767], 9,5);
 
     L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}&s=Ga', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -59,7 +59,7 @@
     //     icon: busIcon
     // }).addTo(map);
 
-    $.getJSON('geojson/terminal epsg.geojson', function (data) {
+    $.getJSON('geojson/fixter.geojson', function (data) {
         L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
                 return L.marker(latlng, {
@@ -84,19 +84,19 @@
                     "<br><strong>REMARK:</strong> " + remark +
                     "<br><strong>Latitude:</strong> " + latitude +
                     "<br><strong>Longitude:</strong> " + longitude +
-                    "<br><button onclick='return keSini("+ latitude + longitude +")'>Button</button>"
+                    "<br><button onclick='keSini(" + latitude + ", " + longitude + ")'>Button</button>";
 
                 layer.bindPopup(popupContent);
             }
         }).addTo(map);
     });
 
-    L.Routing.control({
-        waypoints: [
-            L.latLng(-7.599187514,112.78720839799996),
-            L.latLng(-7.38659453000002, 112.733095929)
-        ]
-    }).addTo(map);
+    // L.Routing.control({
+    //     waypoints: [
+    //         L.latLng(-7.410733686000023,112.583008211),
+    //         L.latLng(-8.234534608999976, 114.35543114999996)
+    //     ]
+    // }).addTo(map);
 
 
 </script>

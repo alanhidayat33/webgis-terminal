@@ -1,0 +1,581 @@
+{
+    "type": "FeatureCollection",
+    "name": "terminale",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 10.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{30A5A1A7-333B-4C18-8B37-DF376E3D1193}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12534401.548378717154264, -885011.361912256921642]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 16.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{7AE29B15-030E-4EF0-8681-B5B2EB1CE8D2}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12573149.59164965339005, -917196.048725995235145]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 32.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{8845CA32-A9AC-4F62-8E55-DE180A7E08F7}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12569516.888680331408978, -853122.564564481261186]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 37.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{B4C847B1-B40D-4B18-9B63-6ECDCF35E919}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12732128.348356403410435, -916227.635944675188512]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 62.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{8326BFD5-B2F7-40B8-A748-616434D06C0C}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12691657.075917091220617, -860402.957353915087879]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 67.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{D64F7CB3-B915-43D9-9E9F-CEEC6DCFC844}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12554433.461247306317091, -848792.40172303293366]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 70.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{1822A26E-45FD-4DCF-9F92-39AB30EA07DD}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12603974.113384392112494, -907672.903151791659184]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 71.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{2CDDAF8B-EF71-4055-9232-8A619919D65D}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12706652.364473501220345, -934522.489484542049468]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 82.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{55D20329-3F32-4FA9-ABED-098A42F0A8FA}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12548007.484530618414283, -889154.28693389124237]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 99.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{D31403F8-D4ED-4CBD-89F6-447A9D3A303F}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12723480.491933023557067, -927535.776861234102398]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 108.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{DE474AB8-7CAA-4692-8EF5-8F318C5005A3}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12604388.962943995371461, -872259.712776162661612]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 117.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{D7DC8E59-5DD1-4B26-9E4F-CC69D6B42385}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12710767.025066882371902, -942676.502070732647553]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 119.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{F99CE953-6D76-49EE-8B3F-76F8E8C66C3A}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12566065.419185377657413, -858340.535674493643455]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 142.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{55EBD0BF-F8DE-4762-BAA5-65B3B0D39D89}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12649377.985522648319602, -915776.770439258776605]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 145.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{CDFCF1D8-0D15-42CD-919D-B55071AD6C28}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12619307.395744726061821, -923816.138411381398328]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 166.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{1985F1B7-C3D8-479D-9B7F-E044BC13670A}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12729988.36506325006485, -919836.265518305473961]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 174.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{AB08301C-4EB0-4460-8CCF-A649DE313DDE}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12537740.280840491876006, -895928.02458424156066]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 180.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{97135BA9-A9C3-44D9-9782-1787E6EC54D6}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12542652.458644894883037, -826518.416334506124258]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 182.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{7AE80615-F839-42F5-95C6-F3DB22F6454C}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12544376.954072488471866, -854596.174685374367982]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 197.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{C61E138C-0B0C-40C8-89C3-720990ADE3E9}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12685979.992391800507903, -894465.694535283138976]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 201.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{06B95908-CF6B-4F03-98A1-6B899E540C49}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12535088.349673219025135, -856028.542339709121734]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 202.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{1599B0A5-A38E-4A3C-8C87-90DAE5368CD7}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12549390.834365542978048, -824559.209509946871549]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 212.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{384D55FA-9964-4C8B-A464-E7AAA64256E7}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12557431.404672751203179, -861726.934444489656016]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 213.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{0E28353F-1CE0-44D0-A9D7-03356AB1144B}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12532683.146023456007242, -827268.928759758244269]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 219.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{7734BBC2-6F3F-4D12-9B64-D15C1A0D1BA3}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12547065.029342586174607, -833578.330992336384952]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 225.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{7AF1F8D2-E2E9-4F4D-9D54-02E541A1895F}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12712020.586950894445181, -929634.093899793224409]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 226.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{2CB1F9EC-F816-4F50-8325-A68CC17CB4A5}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12656158.737456494942307, -863611.883751663379371]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 228.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{CCCA9224-9F3D-4701-AAB7-88C1B0AA86E1}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12598472.692015573382378, -867216.183752887300216]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 229.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{AE6BE4E1-FBA2-4DC0-9FA8-12FFEA7A5D6C}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12671690.184095162898302, -884032.658746817731299]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 235.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{DFF60F7E-9979-43B0-B632-750C22219FF6}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12725830.138473952189088, -942631.926644236780703]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 240.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{897ACDEF-2349-4A5C-A058-E00DF2831478}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12567379.999735068529844, -855546.157023461302742]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 243.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{02C68A40-B214-4535-BBE2-1D3D23E58982}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12728881.106601128354669, -917650.675386852934025]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 245.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{0A59F102-8EAA-481B-A2F2-7C9BB47D6DE9}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12541162.160278979688883, -886203.240244169952348]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 263.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{4E6A7C47-E583-48B0-845F-92F3A800CEED}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12630076.624178232625127, -912085.566375795286149]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 271.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{DD11C618-265B-465A-A6B7-376BD4E8F5EB}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12555414.606860185042024, -848428.787441817112267]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 280.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{0BFA435B-7F73-4206-9464-B296878F3A0F}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12607135.941809467971325, -892700.327336631133221]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 281.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{BED222F9-6130-4147-BE2F-3D2252C183C5}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12530051.794935718178749, -838720.787071961327456]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "OBJECTID": 283.0,
+                "FCODE": "11930",
+                "REMARK": "Stasiun / Terminal Bis",
+                "GLOBALID": "{7290FA88-DD27-4E29-AAE9-CCC58B3297C7}",
+                "T_NAME": null,
+                "IMAGES": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [12631729.045578880235553, -935046.845998505246826]
+            }
+        }
+    ]
+}
