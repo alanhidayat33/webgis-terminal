@@ -119,6 +119,7 @@
         }).addTo(map);
     });
 
+    //fungsi untuk routing
     var control = null;
 
     function Routing() {
@@ -126,12 +127,12 @@
             waypoints: [
                 L.latLng(),
                 L.latLng()
-            ]
+            ],
         })
         control.addTo(map);
     }
 
-
+    //point routing ke titik awal
     function keAwal(latitude, longitude) {
         var latLng0 = L.latLng(latitude, longitude);
         if (control == null) {
@@ -143,11 +144,13 @@
 
     }
 
+    // point ke titik akhir
     function keAkhir(latitude, longitude) {
         var latLng1 = L.latLng(latitude, longitude);
         control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng1);
     }
 
+    //menghapus jejak routing
     function stopRouting() {
         control.remove();
         control = null;
