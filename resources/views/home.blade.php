@@ -46,7 +46,7 @@
 </body>
 
 <script>
-    var map = L.map('map').setView([-8.030260467966045,  113.54722678635767], 9,5);
+    var map = L.map('map').setView([-8.030260467966045,  113.54722678635767], 9);
 
     var Satellite = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
