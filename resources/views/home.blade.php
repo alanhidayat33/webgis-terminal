@@ -19,8 +19,14 @@
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
 
-    <script src="geojson/tes.geojson"></script>
+    {{-- search js leaflet --}}
+    {{-- <script src="js/leaflet-search/dist/leaflet-search.src.js"></script>
+    <link href="js/leaflet-search/dist/leaflet-search.mobile.min.css" rel="stylesheet"> --}}
+    <script src="{{ asset('js/leaflet-search/dist/leaflet-search.src.js') }}"></script>
+    <link href="{{ asset('js/leaflet-search/dist/leaflet-search.mobile.min.css') }}" rel="stylesheet">
 
+
+    <!-- Routing Machine -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
@@ -58,6 +64,8 @@
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     });
 
+
+
     L.control.layers({
         'Satellite': Satellite,
         'Roads': Roads,
@@ -67,6 +75,7 @@
         position: 'bottomleft',
         collapsed: false
     }).addTo(map);
+
 
     Default.addTo(map);
 
@@ -80,12 +89,9 @@
         popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
-    // var marker = L.marker([-6.9101651, 112.2638728], {
-    //     icon: busIcon
-    // }).addTo(map);
 
-    $.getJSON('geojson/fixter.geojson', function (data) {
-        L.geoJSON(data, {
+    $.getJSON('geojson/terminals.geojson', function (data) {
+        var layerTerminal = L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
                 return L.marker(latlng, {
                     icon: busIcon
@@ -96,19 +102,23 @@
                 var properties = feature.properties;
 
                 // Mendapatkan informasi yang diinginkan dari properti
-                var fcode = properties.FCODE;
-                var remark = properties.REMARK;
+                var nama = properties.T_NAME;
+                var imageURL = properties.IMAGES;
+                var route = properties.ROUTE;
+                var operator = properties.OPERATOR;
 
                 // Mendapatkan koordinat
                 var coordinates = feature.geometry.coordinates;
                 var latitude = coordinates[1];
                 var longitude = coordinates[0];
 
+                var imageWidth = 270; // Lebar gambar dalam piksel
+                var imageHeight = 160;
                 // Membuat popup dengan informasi titik
-                var popupContent = "<strong>FCODE:</strong> " + fcode +
-                    "<br><strong>REMARK:</strong> " + remark +
-                    "<br><strong>Latitude:</strong> " + latitude +
-                    "<br><strong>Longitude:</strong> " + longitude +
+                var popupContent = "<strong> "+ nama +"</strong> " +
+                    "<br><img src='" + imageURL + "' style='width: " + imageWidth + "px; height: " + imageHeight + "px;'>" +
+                    "<br><strong>Rute Bus :</strong> " + route +
+                    "<br><br><strong>Operator Bus :</strong> " + operator +
                     "<br><button class='btn btn-info' onclick='return keAwal("+ latitude + ", " + longitude +")'>Start</button>" +
                     " ||| <button class='btn btn-info' onclick='return keAkhir("+ latitude + ", " + longitude +")'>Dest</button>" +
                     " ||| <button class='btn btn-info' onclick='return stopRouting("+ latitude + ", " + longitude +")'>Remove Route</button>" ;
@@ -119,6 +129,16 @@
         }).addTo(map);
     });
 
+    L.control.search({
+		layer: poiLayers,
+		initial: false,
+		propertyName: 'REMARK',
+		buildTip: function(text, val) {
+			// var type = val.layer.feature.properties.FCODE;
+			return '<a href="#" class="'+type+'">+ text +</a>';
+		}
+	}).addTo(map);
+
     //fungsi untuk routing
     var control = null;
 
@@ -128,9 +148,24 @@
                 L.latLng(),
                 L.latLng()
             ],
+            createMarker: function() {
+                return null; // Mengembalikan null untuk menghindari pembuatan marker
+            },
+            routeWhileDragging: false,
+            lineOptions: {
+                styles: [
+                    {
+                        color : 'blue',
+                        opacity: 0.6,
+                        weight: 4
+                    }
+                ]
+            },
         })
         control.addTo(map);
     }
+
+
 
     //point routing ke titik awal
     function keAwal(latitude, longitude) {
@@ -155,6 +190,8 @@
         control.remove();
         control = null;
     }
+
+
 
 </script>
 

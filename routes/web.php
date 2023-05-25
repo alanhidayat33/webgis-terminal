@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('landingpage');
 });
 
-Route::get('/landingpage', function () {
-    return view('landingpage');
+Route::get('/map', function () {
+    return view('home');
 });

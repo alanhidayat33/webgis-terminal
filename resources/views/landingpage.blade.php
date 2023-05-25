@@ -107,7 +107,7 @@
           <button class="buttonmap" type="button" onclick="redirectToPage()">Masuk Map</button>
           <script>
             function redirectToPage() {
-                window.location.href = "/";
+                window.location.href = "/map";
             }
           </script>
         </div>
@@ -170,7 +170,7 @@
         </div>
       </div>
     </div>
-   
+
     <!--Footer-->
     <footer class="footer footer-default">
       <div class="container">
