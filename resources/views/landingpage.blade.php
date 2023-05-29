@@ -20,8 +20,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/bus-station.png">
-  <link rel="icon" type="image/png" href="../assets/img/bus-station.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/bus.png" class="rounded-image">
+  <link rel="icon" type="image/png" href="../assets/img/bus.png" class="rounded-image">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>GIS TERMINAL</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -49,6 +49,10 @@
     .bg-orange {
         background-color: #ff0000;
     }
+
+    .div-container {
+      margin-right: 20px;
+    }
   </style>
 </head>
 
@@ -72,12 +76,12 @@
           <a class="dropdown-item" href="#">One more separated link</a>
         </div>
       </div> -->
-      <div>
-        <img src="../assets/img/pin.png" width="50" height="50">
+      <div class="div-container">
+        <img src="../assets/img/bus.png" width="50" height="50" class="rounded-image">
       </div>
-      <div class="navbar-translate justify-content-">
+      <div class="navbar-translate justify-content-end">
         <a class="navbar-brand" rel="tooltip" title="Made by GIS Team" data-placement="bottom" target="_blank">
-            GIS TERMINAL
+          GIS TERMINAL
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>

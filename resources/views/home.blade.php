@@ -43,156 +43,174 @@
 
 <body>
     <div id="map"></div>
-</body>
 
-<script>
-    var map = L.map('map').setView([-8.030260467966045,  113.54722678635767], 9);
+    <script>
+            var map = L.map('map').setView([-8.030260467966045,  113.54722678635767], 9);
 
-    var Satellite = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    });
+            var Satellite = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            });
 
-    var Roads = L.tileLayer('http://mt0.google.com/vt/lyrs=h&hl=en&x={x}&y={y}&z={z}&s=Ga', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    });
+            var Roads = L.tileLayer('http://mt0.google.com/vt/lyrs=h&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            });
 
-    var Hybrid = L.tileLayer('http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}&s=Ga', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    });
+            var Hybrid = L.tileLayer('http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            });
 
-    var Default = L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}&s=Ga', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    });
+            var Default = L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            });
 
-
-
-    L.control.layers({
-        'Satellite': Satellite,
-        'Roads': Roads,
-        'Hybrid': Hybrid,
-        'Default': Default
-    }, null, {
-        position: 'bottomleft',
-        collapsed: false
-    }).addTo(map);
+            L.control.layers({
+                'Satellite': Satellite,
+                'Roads': Roads,
+                'Hybrid': Hybrid,
+                'Default': Default
+            }, null, {
+                position: 'bottomleft',
+                collapsed: false
+            }).addTo(map);
 
 
-    Default.addTo(map);
+            Default.addTo(map);
 
-    var busIcon = L.icon({
-        iconUrl: 'images/pin.png',
+            var busIcon = L.icon({
+                iconUrl: 'images/pin.png',
 
-        iconSize: [50, 75], // size of the icon
-        shadowSize: [50, 64], // size of the shadow
-        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62], // the same for the shadow
-        popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-
-
-    $.getJSON('geojson/terminals.geojson', function (data) {
-        var layerTerminal = L.geoJSON(data, {
-            pointToLayer: function (feature, latlng) {
-                return L.marker(latlng, {
-                    icon: busIcon
-                });
-            },
-
-            onEachFeature: function (feature, layer) {
-                var properties = feature.properties;
-
-                // Mendapatkan informasi yang diinginkan dari properti
-                var nama = properties.T_NAME;
-                var imageURL = properties.IMAGES;
-                var route = properties.ROUTE;
-                var operator = properties.OPERATOR;
-
-                // Mendapatkan koordinat
-                var coordinates = feature.geometry.coordinates;
-                var latitude = coordinates[1];
-                var longitude = coordinates[0];
-
-                var imageWidth = 270; // Lebar gambar dalam piksel
-                var imageHeight = 160;
-                // Membuat popup dengan informasi titik
-                var popupContent = "<strong> "+ nama +"</strong> " +
-                    "<br><img src='" + imageURL + "' style='width: " + imageWidth + "px; height: " + imageHeight + "px;'>" +
-                    "<br><strong>Rute Bus :</strong> " + route +
-                    "<br><br><strong>Operator Bus :</strong> " + operator +
-                    "<br><button class='btn btn-info' onclick='return keAwal("+ latitude + ", " + longitude +")'>Start</button>" +
-                    " ||| <button class='btn btn-info' onclick='return keAkhir("+ latitude + ", " + longitude +")'>Dest</button>" +
-                    " ||| <button class='btn btn-info' onclick='return stopRouting("+ latitude + ", " + longitude +")'>Remove Route</button>" ;
+                iconSize: [50, 75], // size of the icon
+                shadowSize: [50, 64], // size of the shadow
+                iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62], // the same for the shadow
+                popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
 
 
-                layer.bindPopup(popupContent);
-            }
-        }).addTo(map);
-    });
+            $.getJSON('geojson/terminals.geojson', function (data) {
+                var layerTerminal = L.geoJSON(data, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: busIcon
+                        });
+                    },
 
-    L.control.search({
-		layer: poiLayers,
-		initial: false,
-		propertyName: 'REMARK',
-		buildTip: function(text, val) {
-			// var type = val.layer.feature.properties.FCODE;
-			return '<a href="#" class="'+type+'">+ text +</a>';
-		}
-	}).addTo(map);
+                    onEachFeature: function (feature, layer) {
+                        var properties = feature.properties;
 
-    //fungsi untuk routing
-    var control = null;
+                        // Mendapatkan informasi yang diinginkan dari properti
+                        var nama = properties.T_NAME;
+                        var imageURL = properties.IMAGES;
+                        var route = properties.ROUTE;
+                        var operator = properties.OPERATOR;
 
-    function Routing() {
-        control = L.Routing.control({
-            waypoints: [
-                L.latLng(),
-                L.latLng()
-            ],
-            createMarker: function() {
-                return null; // Mengembalikan null untuk menghindari pembuatan marker
-            },
-            routeWhileDragging: false,
-            lineOptions: {
-                styles: [
-                    {
-                        color : 'blue',
-                        opacity: 0.6,
-                        weight: 4
+                        // Mendapatkan koordinat
+                        var coordinates = feature.geometry.coordinates;
+                        var latitude = coordinates[1];
+                        var longitude = coordinates[0];
+
+                        var imageWidth = 270; // Lebar gambar dalam piksel
+                        var imageHeight = 160;
+                        // Membuat popup dengan informasi titik
+                        var popupContent = "<strong> "+ nama +"</strong> " +
+                            "<br><img src='" + imageURL + "' style='width: " + imageWidth + "px; height: " + imageHeight + "px;'>" +
+                            "<br><strong>Rute Bus :</strong> " + route +
+                            "<br><br><strong>Operator Bus :</strong> " + operator +
+                            "<br><button class='btn btn-info' onclick='return keAwal("+ latitude + ", " + longitude +")'>Start</button>" +
+                            " ||| <button class='btn btn-info' onclick='return keAkhir("+ latitude + ", " + longitude +")'>Dest</button>" +
+                            " ||| <button class='btn btn-info' onclick='return stopRouting("+ latitude + ", " + longitude +")'>Remove Route</button>" ;
+
+
+                        layer.bindPopup(popupContent);
                     }
-                ]
-            },
-        })
-        control.addTo(map);
-    }
+                }).addTo(map);
+            });
 
+            var backButtonControl = L.Control.extend({
+                options: {
+                    position: 'topright'
+                },
 
+                onAdd: function (map) {
+                    var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
 
-    //point routing ke titik awal
-    function keAwal(latitude, longitude) {
-        var latLng0 = L.latLng(latitude, longitude);
-        if (control == null) {
-            Routing();
-            control.spliceWaypoints(0, 1, latLng0);
-            control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng1);
-        }
-        control.spliceWaypoints(0, 1, latLng0);
+                    var button = L.DomUtil.create('button', 'leaflet-control-button', container);
+                    button.innerHTML = 'Back';
 
-    }
+                    // Menambahkan event listener untuk tombol "Back"
+                    button.addEventListener('click', function () {
+                        goBack();
+                    });
 
-    // point ke titik akhir
-    function keAkhir(latitude, longitude) {
-        var latLng1 = L.latLng(latitude, longitude);
-        control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng1);
-    }
+                    return container;
+                }
+            });
 
-    //menghapus jejak routing
-    function stopRouting() {
-        control.remove();
-        control = null;
-    }
+            function goBack() {
+                history.back();
+            }
 
+            map.addControl(new backButtonControl());
 
+            L.control.search({
+                layer: poiLayers,
+                initial: false,
+                propertyName: 'REMARK',
+                buildTip: function(text, val) {
+                    // var type = val.layer.feature.properties.FCODE;
+                    return '<a href="#" class="'+type+'">+ text +</a>';
+                }
+            }).addTo(map);
 
-</script>
+            //fungsi untuk routing
+            var control = null;
 
+            function Routing() {
+                control = L.Routing.control({
+                    waypoints: [
+                        L.latLng(),
+                        L.latLng()
+                    ],
+                    createMarker: function() {
+                        return null; // Mengembalikan null untuk menghindari pembuatan marker
+                    },
+                    routeWhileDragging: false,
+                    lineOptions: {
+                        styles: [
+                            {
+                                color : 'blue',
+                                opacity: 0.6,
+                                weight: 4
+                            }
+                        ]
+                    },
+                })
+                control.addTo(map);
+            }
+
+            //point routing ke titik awal
+            function keAwal(latitude, longitude) {
+                var latLng0 = L.latLng(latitude, longitude);
+                if (control == null) {
+                    Routing();
+                    control.spliceWaypoints(0, 1, latLng0);
+                    control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng1);
+                }
+                control.spliceWaypoints(0, 1, latLng0);
+
+            }
+
+            // point ke titik akhir
+            function keAkhir(latitude, longitude) {
+                var latLng1 = L.latLng(latitude, longitude);
+                control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng1);
+            }
+
+            //menghapus jejak routing
+            function stopRouting() {
+                control.remove();
+                control = null;
+            }
+    </script>
+</body>
 </html>
