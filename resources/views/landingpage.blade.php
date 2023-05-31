@@ -32,11 +32,12 @@
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/demo/demo.css" rel="stylesheet"/>
   <link rel="stylesheet" href="style.scss">
   <link rel="stylesheet" href="util.css">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <style>
     .buttonmap {
         border-radius: 50px;
@@ -52,60 +53,27 @@
 
     .div-container {
       margin-right: 20px;
-      margin-left: 20px;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown select {
-      width: 200px;
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      background-color: #f44336;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      cursor: pointer;
-    }
-
-    .dropdown select:focus {
-      outline: none;
-    }
-
-    /* Styling untuk kotak penjelasan */
-    .bus-description {
-      margin-top: 10px;
-      padding: 10px;
-      font-size: 14px;
-      background-color: #f44336;
     }
   </style>
 </head>
 
 <body class="landing-page sidebar-collapse">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-orange fixed-top navbar-transparent" color-on-scroll="250">
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
     <div class="container">
-      <!-- <div class="dropdown button-dropdown">
+      <div class="dropdown button-dropdown">
         <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
           <span class="button-bar"></span>
           <span class="button-bar"></span>
           <span class="button-bar"></span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">One more separated link</a>
+          <a class="dropdown-header">Informasi Bus</a>
+          <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#busAModal">Bus A</a>
+          <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#busBModal">Bus B</a>
+          <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#busCModal">Bus C</a>
         </div>
-      </div> -->
+      </div>
       <div class="div-container">
         <img src="../assets/img/logh.png" width="50" height="50" class="rounded-image">
       </div>
@@ -121,46 +89,8 @@
           <span class="navbar-toggler-bar bottom-bar"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation">
-        <select id="bus-dropdown">
-          <option value="">Pengumuman</option>
-          <option value="a">Bus A</option>
-          <option value="b">Bus B</option>
-          <option value="c">Bus C</option>
-        </select>
-
-        <div id="bus-description">
-          <!-- Penjelasan mengenai bus akan ditampilkan di sini -->
-        </div>
-
-        <script>
-          // Mendapatkan elemen dropdown
-          var busDropdown = document.getElementById("bus-dropdown");
-          // Mendapatkan elemen div untuk menampilkan penjelasan
-          var busDescription = document.getElementById("bus-description");
-
-          // Menambahkan event listener saat nilai dropdown berubah
-          busDropdown.addEventListener("change", function() {
-            // Mendapatkan nilai yang dipilih
-            var selectedBus = busDropdown.value;
-
-            // Mengubah penjelasan berdasarkan nilai yang dipilih
-            switch (selectedBus) {
-              case "a":
-                busDescription.innerHTML = "Penjelasan mengenai Bus A.";
-                break;
-              case "b":
-                busDescription.innerHTML = "Penjelasan mengenai Bus B.";
-                break;
-              case "c":
-                busDescription.innerHTML = "Penjelasan mengenai Bus C.";
-                break;
-              default:
-                busDescription.innerHTML = "";
-                break;
-            }
-          });
-        </script>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+        <!--Biar content end-->
       </div>
     </div>
   </nav>
@@ -269,6 +199,66 @@
       </div>
     </footer>
   </div>
+
+  <!-- Modal untuk Bus A -->
+  <div class="modal fade" id="busAModal" tabindex="-1" role="dialog" aria-labelledby="busAModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="busAModalLabel">Bus A</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Informasi mengenai Bus A -->
+              <p>Terminal penumpang Tipe A, yaitu yang berfungsi melayani kendaraan penumpang umum untuk angkutan antar kota antar propinsi (AKAP),
+                 dan angkutan lintas batas antar negara, angkutan antar kota dalam propinasi (AKDP), angkutan kota (AK) serta angkutan pedesaan 
+                 (ADES).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal untuk Bus B -->
+      <div class="modal fade" id="busBModal" tabindex="-1" role="dialog" aria-labelledby="busBModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="busBModalLabel">Bus B</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Informasi mengenai Bus B -->
+              <p>Terminal penumpang Tipe B, yaitu yang berfungsi melayani kendaraan penumpang umum untuk angkutan antar kota dalam provinsi (AKDP),
+                angkutan kota (AK) serta angkutan pedesaan (ADES).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal untuk Bus C -->
+      <div class="modal fade" id="busCModal" tabindex="-1" role="dialog" aria-labelledby="busCModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="busCModalLabel">Bus C</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Informasi mengenai Bus C -->
+              <p>Terminal penumpang Tipe C, yaitu yang berfungsi melayani kendaraan penumpang umum  untuk angkutan pedesaan (ADES).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -283,9 +273,10 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
-  <!--JavaScript Bootstrap-->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="path/to/bootstrap.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
