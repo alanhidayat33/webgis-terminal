@@ -34,6 +34,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 
+    {{-- bootstrap icon --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+
     <style>
         #map {
             height: 100vh;
@@ -103,6 +107,7 @@
                         var imageURL = properties.IMAGES;
                         var route = properties.ROUTE;
                         var operator = properties.OPERATOR;
+                        var tipe = properties.TYPE;
 
                         // Mendapatkan koordinat
                         var coordinates = feature.geometry.coordinates;
@@ -111,14 +116,24 @@
 
                         var imageWidth = 270; // Lebar gambar dalam piksel
                         var imageHeight = 160;
-                        // Membuat popup dengan informasi titik
-                        var popupContent = "<strong> "+ nama +"</strong> " +
-                            "<br><img src='" + imageURL + "' style='width: " + imageWidth + "px; height: " + imageHeight + "px;'>" +
-                            "<br><strong>Rute Bus :</strong> " + route +
-                            "<br><br><strong>Operator Bus :</strong> " + operator +
-                            "<br><button class='btn btn-info' onclick='return keAwal("+ latitude + ", " + longitude +")'>Start</button>" +
-                            " ||| <button class='btn btn-info' onclick='return keAkhir("+ latitude + ", " + longitude +")'>Dest</button>" +
-                            " ||| <button class='btn btn-info' onclick='return stopRouting("+ latitude + ", " + longitude +")'>Remove Route</button>" ;
+
+                        var popupContent = "<strong> " + nama + "</strong> ";
+
+                        if (tipe === "A") {
+                            popupContent += "<span class='text-light bg-danger rounded p-2 style='font-size: 30px;'>" + tipe + "</span>";
+                        } else if (tipe === "B") {
+                            popupContent += "<span class='text-light bg-primary rounded p-2 style='font-size: 30px;'>" + tipe + "</span>";
+                        } else {
+                            popupContent += "<span class='bg-success rounded p-2 style='font-size: 20px;'>" + tipe + "</span>";
+                        }
+
+                        popupContent += "<br><img src='" + imageURL + "' style='width: " + imageWidth + "px; height: " + imageHeight + "px;'>" +
+                                        "<br><strong>Rute Bus :</strong> " + route +
+                                        "<br><br><strong>Operator Bus :</strong> " + operator +
+                                        "<br><button class='btn btn-success' onclick='return keAwal("+ latitude + ", " + longitude +")'>Start <i class='bi bi-geo-alt-fill'></i></button>" +
+                                        " ||| <button class='btn btn-info' onclick='return keAkhir("+ latitude + ", " + longitude +")'>Dest <i class='bi bi-geo-fill'></i></button>" +
+                                        " ||| <button class='btn btn-danger' onclick='return stopRouting("+ latitude + ", " + longitude +")'>Route <i class='bi bi-x-square-fill'></i></button>" +
+                                        "<br><br><a href='https://www.redbus.id/' target='_blank' class='btn btn-warning'>Pesan Tiket</a>" ;
 
 
                         layer.bindPopup(popupContent);
@@ -128,7 +143,7 @@
 
             var backButtonControl = L.Control.extend({
                 options: {
-                    position: 'topright'
+                    position: 'topleft'
                 },
 
                 onAdd: function (map) {

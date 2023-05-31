@@ -20,8 +20,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/bus.png" class="rounded-image">
-  <link rel="icon" type="image/png" href="../assets/img/bus.png" class="rounded-image">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logh.png" class="rounded-image">
+  <link rel="icon" type="image/png" href="../assets/img/logh.png" class="rounded-image">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>GIS TERMINAL</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -77,12 +77,14 @@
         </div>
       </div> -->
       <div class="div-container">
-        <img src="../assets/img/bus.png" width="50" height="50" class="rounded-image">
+        <img src="../assets/img/logh.png" width="50" height="50" class="rounded-image">
       </div>
       <div class="navbar-translate justify-content-end">
-        <a class="navbar-brand" rel="tooltip" title="Made by GIS Team" data-placement="bottom" target="_blank">
-          GIS TERMINAL
-        </a>
+        <h3>
+            <a class="navbar-brand" rel="tooltip" title="Made by GIS Team"  target="_blank">
+                G-TERMINAL
+              </a>
+        </h3>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
           <span class="navbar-toggler-bar middle-bar"></span>
@@ -94,9 +96,6 @@
           <li class="nav-item">
             <a class="nav-link" href="">Pengumuman</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="">Home</a>
-          </li> -->
         </ul>
       </div>
     </div>
@@ -120,7 +119,7 @@
     <!--Tata Cara Pendaftaran-->
     <div class="section text-center" id="carousel">
       <div class="container">
-        <h2>Informasi Fitur</h2>
+        <h2>Informasi Menarik</h2>
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -133,31 +132,41 @@
               </ol>
               <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                  <img class="d-block" src="assets/img/bg1.jpg" alt="Slide 1">
+                    <a href="#" target=blank>
+                        <img class="d-block" src="assets/img/info1.png" alt="Slide 1">
+                    </a>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Slide 1</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block" src="assets/img/bg3.jpg" alt="Slide 2">
+                    <a href="#" target=blank>
+                        <img class="d-block" src="assets/img/info2.png" alt="Slide 2">
+                    </a>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Slide 2</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block" src="assets/img/bg4.jpg" alt="Slide 3">
+                    <a href="https://www.detik.com/jatim/berita/d-6676711/praktis-dan-antiribet-kini-bayar-bus-transjatim-bisa-pakai-qris" target=blank>
+                        <img class="d-block" src="assets/img/info3.png" alt="Slide 3">
+                    </a>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Slide 3</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block" src="assets/img/bg5.jpg" alt="Slide 4">
+                    <a href="https://www.detik.com/jatim/berita/d-6674357/armada-bus-trans-jatim-tambah-10-karena-makin-banyak-peminat" target=blank>
+                        <img class="d-block" src="assets/img/info4.png" alt="Slide 4">
+                    </a>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Slide 4</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block" src="assets/img/bg6.jpg" alt="Slide 5">
+                    <a href="https://kominfo.jatimprov.go.id/berita/pemprov-jatim-siapkan-tambahan-armada-bus-transjatim" target=blank>
+                        <img class="d-block" src="assets/img/info5.png" alt="Slide 5">
+                    </a>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Slide 5</h5>
                   </div>
@@ -182,7 +191,7 @@
           <ul>
             <li>
               <a href="">
-                GIS Team
+                GIS Team 2
               </a>
             </li>
           </ul>
