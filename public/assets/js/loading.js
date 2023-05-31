@@ -1,4 +1,8 @@
-// Set 'loaded' class to body when the content is loaded
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-  });
+// Set loading time (in milliseconds)
+var loadingTime = 600;
+
+// Show content and hide loading screen after loading time
+setTimeout(function() {
+  document.getElementById('map').style.display = 'block';
+  document.body.classList.add('loaded');
+}, loadingTime);
