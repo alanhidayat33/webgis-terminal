@@ -37,6 +37,8 @@
     {{-- bootstrap icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
+    <link href="../assets/css/loading.css" rel="stylesheet" />
+
 
     <style>
         #map {
@@ -46,6 +48,10 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        <img src="../assets/img/logh.png" alt="Loading...">
+        <h1>Tunggu Sejenak....</h1>
+    </div>
     <div id="map"></div>
 
     <script>
@@ -81,9 +87,9 @@
             Default.addTo(map);
 
             var busIcon = L.icon({
-                iconUrl: 'images/pin.png',
+                iconUrl: 'images/logoh.png',
 
-                iconSize: [50, 75], // size of the icon
+                iconSize: [60, 70], // size of the icon
                 shadowSize: [50, 64], // size of the shadow
                 iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
                 shadowAnchor: [4, 62], // the same for the shadow
@@ -227,5 +233,6 @@
                 control = null;
             }
     </script>
+    <script src="../assets/js/loading.js" type="text/javascript"></script>
 </body>
 </html>

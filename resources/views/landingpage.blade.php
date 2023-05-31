@@ -37,6 +37,8 @@
   <link rel="stylesheet" href="util.css">
   <link rel="stylesheet" href="main.css">
 
+
+
   <style>
     .buttonmap {
         border-radius: 50px;
@@ -205,6 +207,7 @@
       </div>
     </footer>
   </div>
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -219,6 +222,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
+
 </body>
 
 </html>
