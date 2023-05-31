@@ -36,9 +36,7 @@
   <link rel="stylesheet" href="style.scss">
   <link rel="stylesheet" href="util.css">
   <link rel="stylesheet" href="main.css">
-
-
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
     .buttonmap {
         border-radius: 50px;
@@ -54,6 +52,36 @@
 
     .div-container {
       margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown select {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      background-color: #f44336;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+    }
+
+    .dropdown select:focus {
+      outline: none;
+    }
+
+    /* Styling untuk kotak penjelasan */
+    .bus-description {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 14px;
+      background-color: #f44336;
     }
   </style>
 </head>
@@ -93,12 +121,46 @@
           <span class="navbar-toggler-bar bottom-bar"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="">Pengumuman</a>
-          </li>
-        </ul>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <select id="bus-dropdown">
+          <option value="">Pengumuman</option>
+          <option value="a">Bus A</option>
+          <option value="b">Bus B</option>
+          <option value="c">Bus C</option>
+        </select>
+
+        <div id="bus-description">
+          <!-- Penjelasan mengenai bus akan ditampilkan di sini -->
+        </div>
+
+        <script>
+          // Mendapatkan elemen dropdown
+          var busDropdown = document.getElementById("bus-dropdown");
+          // Mendapatkan elemen div untuk menampilkan penjelasan
+          var busDescription = document.getElementById("bus-description");
+
+          // Menambahkan event listener saat nilai dropdown berubah
+          busDropdown.addEventListener("change", function() {
+            // Mendapatkan nilai yang dipilih
+            var selectedBus = busDropdown.value;
+
+            // Mengubah penjelasan berdasarkan nilai yang dipilih
+            switch (selectedBus) {
+              case "a":
+                busDescription.innerHTML = "Penjelasan mengenai Bus A.";
+                break;
+              case "b":
+                busDescription.innerHTML = "Penjelasan mengenai Bus B.";
+                break;
+              case "c":
+                busDescription.innerHTML = "Penjelasan mengenai Bus C.";
+                break;
+              default:
+                busDescription.innerHTML = "";
+                break;
+            }
+          });
+        </script>
       </div>
     </div>
   </nav>
@@ -207,7 +269,6 @@
       </div>
     </footer>
   </div>
-
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -222,7 +283,9 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
-
+  <!--JavaScript Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-
 </html>
